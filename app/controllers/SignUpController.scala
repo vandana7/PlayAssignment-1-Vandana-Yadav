@@ -40,7 +40,7 @@ class SignUpController @Inject() extends Controller {
             if(stream.pwd==stream.repwd) {
               if(stream.mobileNo.length==10) {
                 AddUser.addUser(data)
-                Redirect(routes.HomeController.profilePage).withSession("username"->data.username)
+                Redirect(routes.HomeController.profilePage).withSession("User"->data.username)
               }
               else Redirect(routes.HomeController.signupPage).flashing("reason"->"invalis mobile no")
             }

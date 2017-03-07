@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/knoldus/Play/PlayMiniProject/conf/routes
-// @DATE:Tue Mar 07 02:30:43 IST 2017
+// @DATE:Tue Mar 07 10:14:08 IST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -9,7 +9,7 @@ import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamic
 
 import _root_.controllers.Assets.Asset
 
-// @LINE:6
+// @LINE:8
 package controllers {
 
   // @LINE:13
@@ -23,6 +23,21 @@ package controllers {
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
+    }
+  
+  }
+
+  // @LINE:36
+  class ReverseProfileController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:36
+    def logout(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "logout")
     }
   
   }
@@ -42,18 +57,12 @@ package controllers {
   
   }
 
-  // @LINE:6
+  // @LINE:17
   class ReverseHomeController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
-  
-    // @LINE:17
-    def homePage(): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "home")
-    }
   
     // @LINE:23
     def signupPage(): Call = {
@@ -70,11 +79,11 @@ package controllers {
     // @LINE:33
     def profilePage(): Call = {
       import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "profile")
+      Call("GET", _prefix + { _defaultPrefix } + "profile")
     }
   
-    // @LINE:6
-    def index(): Call = {
+    // @LINE:17
+    def homePage(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix)
     }

@@ -42,12 +42,12 @@ class HomeController @Inject() extends Controller {
 //
 //  }
 
-  def profile = Action { implicit request=>
+  def profilePage = Action { implicit request=>
 
-    request.session.get("username").map{ uname=>
+    request.session.get("User").map{ uname=>
       val obj=new FetchUserData
       val data=obj.fetchData(uname)
-      Ok(views.html.profile("Profile Page",data))
+      Ok(views.html.profilePage(data))
     }.getOrElse{
       Unauthorized("Oops, somthing went  wrong")
     }

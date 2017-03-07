@@ -10,11 +10,6 @@ import services.MockDatabase
 
 class LogInController @Inject() extends Controller{
 
-  def profilePage = Action {
-    Ok(views.html.profile("profile Page"))
-
-  }
-
 
   val logInForm =Form(
     mapping (
@@ -22,27 +17,33 @@ class LogInController @Inject() extends Controller{
       "pwd" -> nonEmptyText
     )(LoginAccounts.apply)(LoginAccounts.unapply)
   )
+
+
  def loginProcess = Action { implicit request =>
    logInForm.bindFromRequest.fold(
      formWithErrors => {
+       println(formWithErrors)
        Redirect(routes.HomeController.loginPage).flashing(
          "error" -> "Something went Wrong Please Try Again later")
      },
      data => {
        val stream = logInForm.bindFromRequest.get
+       println(stream)
        val list = MockDatabase.listOfUsers
+       println(list)
        val resultlist =  list.map( element=>
 
-         if(element.username == data.username && element.pwd == data.pwd) true
+         if(element.username == stream.username && element.pwd == stream.pwd) true
          else false
        )
 
        if(resultlist.contains(true)){
 
-         Redirect(routes.HomeController.profilePage).withSession("User"->data.username).flashing("msg"->"Login Successful")
+          println("login sucessfull")
+         Redirect(routes.HomeController.profilePage()).withSession("User"->data.username).flashing("msg"->"Login Successful")
        }
        else
-         Redirect(routes.HomeController.loginPage).flashing("msg"->"Incorrect username or password")
+         Redirect(routes.HomeController.loginPage()).flashing("msg"->"Incorrect username or password")
 
      }
 

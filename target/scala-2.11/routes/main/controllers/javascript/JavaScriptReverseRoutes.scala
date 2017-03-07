@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/knoldus/Play/PlayMiniProject/conf/routes
-// @DATE:Tue Mar 07 02:30:43 IST 2017
+// @DATE:Tue Mar 07 10:14:08 IST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -10,7 +10,7 @@ import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamic
 
 import _root_.controllers.Assets.Asset
 
-// @LINE:6
+// @LINE:8
 package controllers.javascript {
   import ReverseRouteContext.empty
 
@@ -28,6 +28,26 @@ package controllers.javascript {
       """
         function(file1) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:36
+  class ReverseProfileController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:36
+    def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ProfileController.logout",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
         }
       """
     )
@@ -54,23 +74,13 @@ package controllers.javascript {
   
   }
 
-  // @LINE:6
+  // @LINE:17
   class ReverseHomeController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
-  
-    // @LINE:17
-    def homePage: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.homePage",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "home"})
-        }
-      """
-    )
   
     // @LINE:23
     def signupPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -97,14 +107,14 @@ package controllers.javascript {
       "controllers.HomeController.profilePage",
       """
         function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "profile"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "profile"})
         }
       """
     )
   
-    // @LINE:6
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.index",
+    // @LINE:17
+    def homePage: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.homePage",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/knoldus/Play/PlayMiniProject/conf/routes
-// @DATE:Tue Mar 07 02:30:43 IST 2017
+// @DATE:Tue Mar 07 10:14:08 IST 2017
 
 
 package router {
