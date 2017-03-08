@@ -44,8 +44,8 @@ class SignUpController @Inject()(cache:CacheApi) extends Controller {
                val encryptedInfo = data.copy(pwd = Encryption.hash(data.pwd))
                 println(encryptedInfo)
                 cache.set("dataincache",encryptedInfo)
-                Redirect(routes.HomeController.homePage())
-                //Redirect(routes.HomeController.profilePage()).withSession("User"->data.username)
+                //Redirect(routes.HomeController.homePage())
+                Redirect(routes.HomeController.profilePage()).withSession("User"->data.username)
               }
               else {
 

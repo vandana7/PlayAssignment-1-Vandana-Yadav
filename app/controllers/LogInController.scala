@@ -2,13 +2,15 @@ package controllers
 
 import javax.inject.Inject
 
-import model.LoginAccounts
+import model.{LoginAccounts, Users}
+
+import play.api.cache.CacheApi
 import play.api.data._
 import play.api.data.Forms._
 import play.api.mvc.{Action, Controller}
-import services.MockDatabase
+import services.{Encryption, MockDatabase}
 
-class LogInController @Inject() extends Controller{
+class LogInController @Inject()(cache:CacheApi) extends Controller{
 
 
   val logInForm =Form(
@@ -27,24 +29,25 @@ class LogInController @Inject() extends Controller{
          "error" -> "Something went Wrong Please Try Again later")
      },
      data => {
-       val stream = logInForm.bindFromRequest.get
-       println(stream)
-       val list = MockDatabase.listOfUsers
-       println(list)
-       val resultlist =  list.map( element=>
 
-         if(element.username == stream.username && element.pwd == stream.pwd) true
-         else false
-       )
+       println(data)
 
-       if(resultlist.contains(true)){
+        val datafromcache = cache.get[Users]("dataincache").get
+       println(datafromcache)
+
+       val encryptedInfo = data.copy(pwd = Encryption.hash(data.pwd))
+       println("test:" +encryptedInfo)
+
+       if(datafromcache.username == encryptedInfo.username && datafromcache.pwd == encryptedInfo.pwd)
+       {
 
           println("login sucessfull")
          Redirect(routes.HomeController.profilePage()).withSession("User"->data.username).flashing("msg"->"Login Successful")
        }
-       else
-         Redirect(routes.HomeController.loginPage()).flashing("msg"->"Incorrect username or password")
-
+       else {
+         println("invalid password")
+         Redirect(routes.HomeController.loginPage()).flashing("msg" -> "Incorrect username or password")
+       }
      }
 
    )
