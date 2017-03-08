@@ -1,4 +1,4 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/home/knoldus/Play/PlayMiniProject/conf/logback.xml,/home/knoldus/Play/PlayMiniProject/target/scala-2.11/classes/logback.xml)[0m
-[0m[[0mdebug[0m] [0m	(/home/knoldus/Play/PlayMiniProject/conf/application.conf,/home/knoldus/Play/PlayMiniProject/target/scala-2.11/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/home/knoldus/Play/PlayMiniProject/conf/routes,/home/knoldus/Play/PlayMiniProject/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/conf/logback.xml,/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/conf/application.conf,/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/conf/routes,/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/target/scala-2.11/classes/routes)[0m

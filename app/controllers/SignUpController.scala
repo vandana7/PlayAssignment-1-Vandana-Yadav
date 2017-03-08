@@ -6,9 +6,10 @@ import play.api.data._
 import play.api.data.Forms._
 import play.api.mvc.{Action, Controller}
 import model.Users
-import services.{AddUser, MockDatabase}
+import play.api.cache.{Cache, CacheApi}
+import services.{Encryption, MockDatabase, Service}
 
-class SignUpController @Inject() extends Controller {
+class SignUpController @Inject()(cache:CacheApi) extends Controller {
 
 
 
@@ -31,23 +32,37 @@ class SignUpController @Inject() extends Controller {
   def processData = Action {implicit request=>
       usersForm.bindFromRequest.fold(
       formWithErrors => {
-        Redirect(routes.HomeController.signupPage)
+        Redirect(routes.HomeController.signupPage())
       },
         data => {
-        val stream = usersForm.bindFromRequest.get
         val list = MockDatabase.listOfUsers
-         if(!list.contains(stream.username)){
-            if(stream.pwd==stream.repwd) {
-              if(stream.mobileNo.length==10) {
-                AddUser.addUser(data)
-                Redirect(routes.HomeController.profilePage).withSession("User"->data.username)
+         if(!list.contains(data.username)){
+            if(data.pwd==data.repwd) {
+              if(data.mobileNo.length==10) {
+//                service.addUser(data)
+                println(data)
+               val encryptedInfo = data.copy(pwd = Encryption.hash(data.pwd))
+                println(encryptedInfo)
+                cache.set("dataincache",encryptedInfo)
+                Redirect(routes.HomeController.homePage())
+                //Redirect(routes.HomeController.profilePage()).withSession("User"->data.username)
               }
-              else Redirect(routes.HomeController.signupPage).flashing("reason"->"invalis mobile no")
+              else {
+
+                Redirect(routes.HomeController.signupPage()).flashing("reason" -> "invalis mobile no")
+
+              }
             }
-            else Redirect(routes.HomeController.signupPage).flashing("reason"->"passwords doesn't match")
+            else {
+              println("password error")
+              Redirect(routes.HomeController.signupPage()).flashing("reason"->"passwords doesn't match")
+            }
 
           }
-           else Redirect(routes.HomeController.signupPage).flashing("reason" -> "user name already exist")
+           else {
+           println("user exist error")
+           Redirect(routes.HomeController.signupPage()).flashing("reason" -> "user name already exist")
+         }
 
       }
     )

@@ -2,16 +2,18 @@ package controllers
 
 import javax.inject._
 
+import model.Users
 import play.api._
+import play.api.cache.CacheApi
 import play.api.mvc._
-import services.FetchUserData
+import services.{FetchUserData, Service}
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
  * application's home page.
  */
 @Singleton
-class HomeController @Inject() extends Controller {
+class HomeController @Inject()(cache:CacheApi)extends Controller {
 
   /**
    * Create an Action to render an HTML page with a welcome message.
@@ -45,8 +47,9 @@ class HomeController @Inject() extends Controller {
   def profilePage = Action { implicit request=>
 
     request.session.get("User").map{ uname=>
-      val obj=new FetchUserData
-      val data=obj.fetchData(uname)
+//      val obj=new FetchUserData
+//      val data=service.fetchData(uname)
+     val data = cache.get[Users]("dataincache").get
       Ok(views.html.profilePage(data))
     }.getOrElse{
       Unauthorized("Oops, somthing went  wrong")

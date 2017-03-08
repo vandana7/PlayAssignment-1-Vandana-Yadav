@@ -11,7 +11,7 @@ class ProfileController @Inject() extends Controller {
 
   def logout = Action{ implicit request=>
 
-    Redirect(routes.HomeController.homePage).withNewSession
+    Redirect(routes.HomeController.homePage()).withNewSession
   }
 
 }

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/knoldus/Play/PlayMiniProject/conf/routes
-// @DATE:Tue Mar 07 10:14:08 IST 2017
+// @SOURCE:/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/conf/routes
+// @DATE:Wed Mar 08 10:12:40 IST 2017
 
 package router
 
