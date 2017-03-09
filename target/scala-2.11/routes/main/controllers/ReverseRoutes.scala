@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/conf/routes
-// @DATE:Wed Mar 08 10:12:40 IST 2017
+// @DATE:Thu Mar 09 15:21:18 IST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -33,6 +33,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:39
+    def manageAcounts(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "adminpage")
+    }
   
     // @LINE:36
     def logout(): Call = {
@@ -116,6 +122,27 @@ package controllers {
     def message(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "message")
+    }
+  
+  }
+
+  // @LINE:43
+  class ReverseAdminPageController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:43
+    def resume(username:String): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "resume" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("username", username)))))
+    }
+  
+    // @LINE:46
+    def suspend(username:String): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "suspended" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("username", username)))))
     }
   
   }

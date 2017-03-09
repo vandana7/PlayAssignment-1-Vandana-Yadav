@@ -23,7 +23,9 @@ class Module extends AbstractModule {
     bind(classOf[ApplicationTimer]).asEagerSingleton()
     // Set AtomicCounter as the implementation for Counter.
     bind(classOf[Counter]).to(classOf[AtomicCounter])
-    bind(classOf[BackendServices]).to(classOf[Service])asEagerSingleton()
+   // bind(classOf[BackendServices]).to(classOf[Service])asEagerSingleton()
+
+    bind(classOf[WorkingWithCache]).to(classOf[CacheHandling])
   }
 
 }

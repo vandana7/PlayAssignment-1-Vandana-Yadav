@@ -77,6 +77,32 @@
         </div>
     </div>
     <div class="form-group">
+
+            <input type="hidden"  name="isAdmin"
+
+              @if(play.Play.application().configuration().getString("logintype")=="Admin" ){
+
+                value=true
+                 }
+                else{
+                value=false
+                }>
+
+    </div>
+    <div class="form-group">
+
+        <input type="hidden"  name="isAllowed"
+
+               @if(play.Play.application().configuration().getString("permission")=="allowed" ){
+
+        value=true
+        }
+        else{
+        value=false
+        }>
+
+    </div>
+    <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-default">Sign Up</button>
         </div>

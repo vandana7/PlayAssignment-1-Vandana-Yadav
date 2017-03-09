@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/conf/routes
-// @DATE:Wed Mar 08 10:12:40 IST 2017
+// @DATE:Thu Mar 09 15:21:18 IST 2017
 
 package router
 
@@ -20,7 +20,7 @@ class Routes(
   // @LINE:10
   AsyncController_4: controllers.AsyncController,
   // @LINE:13
-  Assets_6: controllers.Assets,
+  Assets_7: controllers.Assets,
   // @LINE:17
   HomeController_3: controllers.HomeController,
   // @LINE:26
@@ -28,7 +28,9 @@ class Routes(
   // @LINE:29
   LogInController_0: controllers.LogInController,
   // @LINE:36
-  ProfileController_5: controllers.ProfileController,
+  ProfileController_6: controllers.ProfileController,
+  // @LINE:43
+  AdminPageController_5: controllers.AdminPageController,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -39,7 +41,7 @@ class Routes(
     // @LINE:10
     AsyncController_4: controllers.AsyncController,
     // @LINE:13
-    Assets_6: controllers.Assets,
+    Assets_7: controllers.Assets,
     // @LINE:17
     HomeController_3: controllers.HomeController,
     // @LINE:26
@@ -47,14 +49,16 @@ class Routes(
     // @LINE:29
     LogInController_0: controllers.LogInController,
     // @LINE:36
-    ProfileController_5: controllers.ProfileController
-  ) = this(errorHandler, CountController_2, AsyncController_4, Assets_6, HomeController_3, SignUpController_1, LogInController_0, ProfileController_5, "/")
+    ProfileController_6: controllers.ProfileController,
+    // @LINE:43
+    AdminPageController_5: controllers.AdminPageController
+  ) = this(errorHandler, CountController_2, AsyncController_4, Assets_7, HomeController_3, SignUpController_1, LogInController_0, ProfileController_6, AdminPageController_5, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, CountController_2, AsyncController_4, Assets_6, HomeController_3, SignUpController_1, LogInController_0, ProfileController_5, prefix)
+    new Routes(errorHandler, CountController_2, AsyncController_4, Assets_7, HomeController_3, SignUpController_1, LogInController_0, ProfileController_6, AdminPageController_5, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -72,6 +76,9 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """processinlogin""", """controllers.LogInController.loginProcess"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profile""", """controllers.HomeController.profilePage"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.ProfileController.logout"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """adminpage""", """controllers.ProfileController.manageAcounts"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """resume""", """controllers.AdminPageController.resume(username:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """suspended""", """controllers.AdminPageController.suspend(username:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -118,7 +125,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
   private[this] lazy val controllers_Assets_versioned2_invoker = createInvoker(
-    Assets_6.versioned(fakeValue[String], fakeValue[Asset]),
+    Assets_7.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -237,7 +244,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
   private[this] lazy val controllers_ProfileController_logout9_invoker = createInvoker(
-    ProfileController_5.logout,
+    ProfileController_6.logout,
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ProfileController",
@@ -246,6 +253,57 @@ class Routes(
       "GET",
       """for logout""",
       this.prefix + """logout"""
+    )
+  )
+
+  // @LINE:39
+  private[this] lazy val controllers_ProfileController_manageAcounts10_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("adminpage")))
+  )
+  private[this] lazy val controllers_ProfileController_manageAcounts10_invoker = createInvoker(
+    ProfileController_6.manageAcounts,
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ProfileController",
+      "manageAcounts",
+      Nil,
+      "GET",
+      """route for adminpage""",
+      this.prefix + """adminpage"""
+    )
+  )
+
+  // @LINE:43
+  private[this] lazy val controllers_AdminPageController_resume11_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("resume")))
+  )
+  private[this] lazy val controllers_AdminPageController_resume11_invoker = createInvoker(
+    AdminPageController_5.resume(fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AdminPageController",
+      "resume",
+      Seq(classOf[String]),
+      "GET",
+      """ for suspending a user""",
+      this.prefix + """resume"""
+    )
+  )
+
+  // @LINE:46
+  private[this] lazy val controllers_AdminPageController_suspend12_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("suspended")))
+  )
+  private[this] lazy val controllers_AdminPageController_suspend12_invoker = createInvoker(
+    AdminPageController_5.suspend(fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AdminPageController",
+      "suspend",
+      Seq(classOf[String]),
+      "GET",
+      """for resuming""",
+      this.prefix + """suspended"""
     )
   )
 
@@ -267,7 +325,7 @@ class Routes(
     // @LINE:13
     case controllers_Assets_versioned2_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned2_invoker.call(Assets_6.versioned(path, file))
+        controllers_Assets_versioned2_invoker.call(Assets_7.versioned(path, file))
       }
   
     // @LINE:17
@@ -309,7 +367,25 @@ class Routes(
     // @LINE:36
     case controllers_ProfileController_logout9_route(params) =>
       call { 
-        controllers_ProfileController_logout9_invoker.call(ProfileController_5.logout)
+        controllers_ProfileController_logout9_invoker.call(ProfileController_6.logout)
+      }
+  
+    // @LINE:39
+    case controllers_ProfileController_manageAcounts10_route(params) =>
+      call { 
+        controllers_ProfileController_manageAcounts10_invoker.call(ProfileController_6.manageAcounts)
+      }
+  
+    // @LINE:43
+    case controllers_AdminPageController_resume11_route(params) =>
+      call(params.fromQuery[String]("username", None)) { (username) =>
+        controllers_AdminPageController_resume11_invoker.call(AdminPageController_5.resume(username))
+      }
+  
+    // @LINE:46
+    case controllers_AdminPageController_suspend12_route(params) =>
+      call(params.fromQuery[String]("username", None)) { (username) =>
+        controllers_AdminPageController_suspend12_invoker.call(AdminPageController_5.suspend(username))
       }
   }
 }

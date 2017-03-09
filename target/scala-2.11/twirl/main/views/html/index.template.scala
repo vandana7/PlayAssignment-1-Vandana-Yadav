@@ -56,8 +56,8 @@ Seq[Any](format.raw/*5.19*/("""
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 06 03:53:50 IST 2017
-                  SOURCE: /home/knoldus/Play/PlayMiniProject/app/views/index.scala.html
+                  DATE: Thu Mar 09 13:04:55 IST 2017
+                  SOURCE: /home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/app/views/index.scala.html
                   HASH: c7ae239e92f882b73fe8b7720d1cbaf53e6adb37
                   MATRIX: 616->95|728->112|757->116|788->139|826->140
                   LINES: 23->5|28->5|31->8|31->8|31->8

@@ -35,4 +35,12 @@ GET    /profile          controllers.HomeController.profilePage
 #for logout
 GET   /logout         controllers.ProfileController.logout
 
+#route for adminpage
+GET   /adminpage       controllers.ProfileController.manageAcounts
 
+
+# for suspending a user
+GET   /resume          controllers.AdminPageController.resume(username: String)
+
+#for resuming
+GET  /suspended           controllers.AdminPageController.suspend(username: String)

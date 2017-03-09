@@ -6,14 +6,14 @@ import model.Users
 import play.api._
 import play.api.cache.CacheApi
 import play.api.mvc._
-import services.{FetchUserData, Service}
+import services.CacheHandling
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
  * application's home page.
  */
 @Singleton
-class HomeController @Inject()(cache:CacheApi)extends Controller {
+class HomeController @Inject()(cache:CacheHandling)extends Controller {
 
   /**
    * Create an Action to render an HTML page with a welcome message.
@@ -49,8 +49,9 @@ class HomeController @Inject()(cache:CacheApi)extends Controller {
     request.session.get("User").map{ uname=>
 //      val obj=new FetchUserData
 //      val data=service.fetchData(uname)
-     val data = cache.get[Users]("dataincache").get
-      Ok(views.html.profilePage(data))
+     //val data = cache.get[Users]("data.username").get
+      val datafromcache = cache.fetchedData(cache.fetchDataFromCache(uname))
+      Ok(views.html.profilePage(datafromcache))
     }.getOrElse{
       Unauthorized("Oops, somthing went  wrong")
     }

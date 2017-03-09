@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/conf/routes
-// @DATE:Wed Mar 08 10:12:40 IST 2017
+// @DATE:Thu Mar 09 15:21:18 IST 2017
 
 
 package router {

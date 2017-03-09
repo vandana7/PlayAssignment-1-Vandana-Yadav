@@ -39,44 +39,51 @@ Seq[Any](format.raw/*1.20*/("""
 """),format.raw/*15.1*/("""<nav class="navbar navbar-default">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li><a href=""""),_display_(/*18.27*/routes/*18.33*/.ProfileController.logout),format.raw/*18.58*/(""""><i class="fa fa-power-off" aria-hidden="true"></i>
+            <li><a href=""""),_display_(/*18.27*/routes/*18.33*/.ProfileController.logout()),format.raw/*18.60*/(""""><i class="fa fa-power-off" aria-hidden="true"></i>
                 <span style="margin-left:10px;font-size:15px;">Logout</span>
             </a>
             </li>
-        </ul>
+            """),_display_(/*22.14*/if(data.isAdmin== true)/*22.37*/{_display_(Seq[Any](format.raw/*22.38*/("""
+
+            """),format.raw/*24.13*/("""<li><a href=""""),_display_(/*24.27*/routes/*24.33*/.ProfileController.manageAcounts()),format.raw/*24.67*/(""""><i class="fa fa-power-off" aria-hidden="true"></i>
+                <span style="margin-left:10px;font-size:15px;">Manage Accounts</span>
+            </a>
+            </li>
+            """)))}),format.raw/*28.14*/("""
+        """),format.raw/*29.9*/("""</ul>
     </div>
 </nav>
 
 
 <div class="row" style="margin-top:20px;">
     <div class="col-md-3" ></div>
-    <div class="col-md-6 info underline" >Name:"""),_display_(/*29.49*/data/*29.53*/.firstname),format.raw/*29.63*/(""" """),_display_(/*29.65*/data/*29.69*/.middlename),format.raw/*29.80*/(""" """),_display_(/*29.82*/data/*29.86*/.lastname),format.raw/*29.95*/(""" """),format.raw/*29.96*/("""</div>
+    <div class="col-md-6 info underline" >Name:"""),_display_(/*36.49*/data/*36.53*/.firstname),format.raw/*36.63*/(""" """),_display_(/*36.65*/data/*36.69*/.middlename),format.raw/*36.80*/(""" """),_display_(/*36.82*/data/*36.86*/.lastname),format.raw/*36.95*/(""" """),format.raw/*36.96*/("""</div>
     <div class="col-md-3" ></div>
 </div>
 
 <div class="row" style="margin-top:20px;">
     <div class="col-md-4" ></div>
-    <div class="col-md-4 restInfo" >UserName:"""),_display_(/*35.47*/data/*35.51*/.username),format.raw/*35.60*/("""</div>
+    <div class="col-md-4 restInfo" >UserName:"""),_display_(/*42.47*/data/*42.51*/.username),format.raw/*42.60*/("""</div>
     <div class="col-md-4" ></div>
 </div>
 
 <div class="row" style="margin-top:20px;">
     <div class="col-md-4" ></div>
-    <div class="col-md-4 restInfo" >Gender:"""),_display_(/*41.45*/data/*41.49*/.gender),format.raw/*41.56*/(""" """),format.raw/*41.57*/("""</div>
+    <div class="col-md-4 restInfo" >Gender:"""),_display_(/*48.45*/data/*48.49*/.gender),format.raw/*48.56*/(""" """),format.raw/*48.57*/("""</div>
     <div class="col-md-4" ></div>
 </div>
 <div class="row" style="margin-top:20px;">
     <div class="col-md-4" ></div>
-    <div class="col-md-4 restInfo" >Age:"""),_display_(/*46.42*/data/*46.46*/.age),format.raw/*46.50*/(""" """),format.raw/*46.51*/("""</div>
+    <div class="col-md-4 restInfo" >Age:"""),_display_(/*53.42*/data/*53.46*/.age),format.raw/*53.50*/(""" """),format.raw/*53.51*/("""</div>
     <div class="col-md-4" ></div>
 </div>
 <div class="row" style="margin-top:20px;">
     <div class="col-md-4" ></div>
-    <div class="col-md-4 restInfo" >Hobbies:"""),_display_(/*51.46*/data/*51.50*/.hobbies),format.raw/*51.58*/("""</div>
+    <div class="col-md-4 restInfo" >Hobbies:"""),_display_(/*58.46*/data/*58.50*/.hobbies),format.raw/*58.58*/("""</div>
     <div class="col-md-4" ></div>
 </div>
-""")))}),format.raw/*54.2*/("""
-"""),format.raw/*55.1*/("""</body>
+""")))}),format.raw/*61.2*/("""
+"""),format.raw/*62.1*/("""</body>
 </html>"""))
       }
     }
@@ -97,11 +104,11 @@ Seq[Any](format.raw/*1.20*/("""
 object profilePage extends profilePage_Scope0.profilePage
               /*
                   -- GENERATED --
-                  DATE: Tue Mar 07 10:22:11 IST 2017
-                  SOURCE: /home/knoldus/Play/PlayMiniProject/app/views/profilePage.scala.html
-                  HASH: 62baf57bb24318aa130b8ad6eba6784768ad1a50
-                  MATRIX: 544->1|657->19|684->20|843->153|857->159|930->211|1008->263|1022->269|1083->310|1166->367|1180->373|1240->412|1288->433|1303->439|1377->492|1461->549|1476->555|1547->605|1624->656|1648->671|1687->672|1715->673|1874->805|1889->811|1935->836|2286->1160|2299->1164|2330->1174|2359->1176|2372->1180|2404->1191|2433->1193|2446->1197|2476->1206|2505->1207|2704->1379|2717->1383|2747->1392|2944->1562|2957->1566|2985->1573|3014->1574|3207->1740|3220->1744|3245->1748|3274->1749|3471->1919|3484->1923|3513->1931|3592->1980|3620->1981
-                  LINES: 20->1|25->1|26->2|31->7|31->7|31->7|32->8|32->8|32->8|33->9|33->9|33->9|34->10|34->10|34->10|35->11|35->11|35->11|38->14|38->14|38->14|39->15|42->18|42->18|42->18|53->29|53->29|53->29|53->29|53->29|53->29|53->29|53->29|53->29|53->29|59->35|59->35|59->35|65->41|65->41|65->41|65->41|70->46|70->46|70->46|70->46|75->51|75->51|75->51|78->54|79->55
+                  DATE: Thu Mar 09 13:48:57 IST 2017
+                  SOURCE: /home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/app/views/profilePage.scala.html
+                  HASH: 9299f71cf8794528055679929d762e6d3a618cb6
+                  MATRIX: 544->1|657->19|684->20|843->153|857->159|930->211|1008->263|1022->269|1083->310|1166->367|1180->373|1240->412|1288->433|1303->439|1377->492|1461->549|1476->555|1547->605|1624->656|1648->671|1687->672|1715->673|1874->805|1889->811|1937->838|2142->1016|2174->1039|2213->1040|2255->1054|2296->1068|2311->1074|2366->1108|2584->1295|2620->1304|2798->1455|2811->1459|2842->1469|2871->1471|2884->1475|2916->1486|2945->1488|2958->1492|2988->1501|3017->1502|3216->1674|3229->1678|3259->1687|3456->1857|3469->1861|3497->1868|3526->1869|3719->2035|3732->2039|3757->2043|3786->2044|3983->2214|3996->2218|4025->2226|4104->2275|4132->2276
+                  LINES: 20->1|25->1|26->2|31->7|31->7|31->7|32->8|32->8|32->8|33->9|33->9|33->9|34->10|34->10|34->10|35->11|35->11|35->11|38->14|38->14|38->14|39->15|42->18|42->18|42->18|46->22|46->22|46->22|48->24|48->24|48->24|48->24|52->28|53->29|60->36|60->36|60->36|60->36|60->36|60->36|60->36|60->36|60->36|60->36|66->42|66->42|66->42|72->48|72->48|72->48|72->48|77->53|77->53|77->53|77->53|82->58|82->58|82->58|85->61|86->62
                   -- GENERATED --
               */
           

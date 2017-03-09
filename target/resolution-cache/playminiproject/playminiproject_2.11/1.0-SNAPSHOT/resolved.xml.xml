@@ -4,7 +4,7 @@
 		module="playminiproject_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20170308101056"
+		publication="20170309175245"
 	>
 		<description>
 		PlayMiniProject
@@ -44,5 +44,6 @@
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.5.10" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-ws_2.11" rev="2.5.10" conf="compile->default(compile)"/>
 		<dependency org="org.scalatestplus.play" name="scalatestplus-play_2.11" rev="1.5.1" conf="test->default(compile)"/>
+		<dependency org="org.mockito" name="mockito-core" rev="1.8.5" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

@@ -3,14 +3,12 @@ package controllers
 import javax.inject.Inject
 
 import model.{LoginAccounts, Users}
-
-import play.api.cache.CacheApi
 import play.api.data._
 import play.api.data.Forms._
 import play.api.mvc.{Action, Controller}
-import services.{Encryption, MockDatabase}
+import services.{CacheHandling, Encryption, MockDatabase}
 
-class LogInController @Inject()(cache:CacheApi) extends Controller{
+class LogInController @Inject()(cache:CacheHandling) extends Controller{
 
 
   val logInForm =Form(
@@ -32,17 +30,21 @@ class LogInController @Inject()(cache:CacheApi) extends Controller{
 
        println(data)
 
-        val datafromcache = cache.get[Users]("dataincache").get
+        val datafromcache = cache.fetchedData(cache.fetchDataFromCache(data.username))
        println(datafromcache)
 
        val encryptedInfo = data.copy(pwd = Encryption.hash(data.pwd))
        println("test:" +encryptedInfo)
 
-       if(datafromcache.username == encryptedInfo.username && datafromcache.pwd == encryptedInfo.pwd)
-       {
-
-          println("login sucessfull")
-         Redirect(routes.HomeController.profilePage()).withSession("User"->data.username).flashing("msg"->"Login Successful")
+       if(datafromcache.username == encryptedInfo.username && datafromcache.pwd == encryptedInfo.pwd) {
+         if (datafromcache.isAllowed == true) {
+           println("login sucessfull")
+           Redirect(routes.HomeController.profilePage()).withSession("User" -> data.username).flashing("msg" -> "Login Successful")
+         }
+         else {
+           println("suspended")
+           Redirect(routes.HomeController.loginPage()).flashing("msg" -> "your session is suspended,you cant login,sorry for inconvenience")
+         }
        }
        else {
          println("invalid password")

@@ -22,8 +22,10 @@
       <excludeFolder url="file://$MODULE_DIR$/../../target/coffeescript" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/jshint" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/less" />
+      <excludeFolder url="file://$MODULE_DIR$/../../target/playminiproject" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/resolution-cache" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/streams" />
+      <excludeFolder url="file://$MODULE_DIR$/../../target/test-reports" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/web" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -149,5 +151,8 @@
     <orderEntry type="library" name="SBT: ch.qos.logback:logback-core:1.1.7:jar" level="project" />
     <orderEntry type="library" name="SBT: ch.qos.logback:logback-classic:1.1.7:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: cglib:cglib-nodep:2.1_3:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.hamcrest:hamcrest-core:1.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.mockito:mockito-core:1.8.5:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.objenesis:objenesis:1.0:jar" level="project" />
   </component>
 </module>

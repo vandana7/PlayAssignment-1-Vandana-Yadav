@@ -77,8 +77,8 @@ Seq[Any](format.raw/*1.16*/("""
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Tue Mar 07 02:30:43 IST 2017
-                  SOURCE: /home/knoldus/Play/PlayMiniProject/app/views/login.scala.html
+                  DATE: Thu Mar 09 13:04:55 IST 2017
+                  SOURCE: /home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/app/views/login.scala.html
                   HASH: 984818554dfbbecdf2c2b25f6c7317a658208699
                   MATRIX: 527->1|636->15|663->16|758->85|783->90|867->148|881->154|954->206|1032->258|1046->264|1107->305|1190->362|1204->368|1264->407|1312->428|1327->434|1401->487|1485->544|1500->550|1571->600|1686->688|1701->694|1751->723
                   LINES: 20->1|25->1|26->2|30->6|30->6|31->7|31->7|31->7|32->8|32->8|32->8|33->9|33->9|33->9|34->10|34->10|34->10|35->11|35->11|35->11|38->14|38->14|38->14

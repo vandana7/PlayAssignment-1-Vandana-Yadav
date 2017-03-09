@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/conf/routes
-// @DATE:Wed Mar 08 10:12:40 IST 2017
+// @DATE:Thu Mar 09 15:21:18 IST 2017
 
 package controllers;
 
@@ -15,6 +15,7 @@ public class routes {
   public static final controllers.ReverseHomeController HomeController = new controllers.ReverseHomeController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseLogInController LogInController = new controllers.ReverseLogInController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseAsyncController AsyncController = new controllers.ReverseAsyncController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseAdminPageController AdminPageController = new controllers.ReverseAdminPageController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseSignUpController SignUpController = new controllers.ReverseSignUpController(RoutesPrefix.byNamePrefix());
 
   public static class javascript {
@@ -25,6 +26,7 @@ public class routes {
     public static final controllers.javascript.ReverseHomeController HomeController = new controllers.javascript.ReverseHomeController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseLogInController LogInController = new controllers.javascript.ReverseLogInController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseAsyncController AsyncController = new controllers.javascript.ReverseAsyncController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseAdminPageController AdminPageController = new controllers.javascript.ReverseAdminPageController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseSignUpController SignUpController = new controllers.javascript.ReverseSignUpController(RoutesPrefix.byNamePrefix());
   }
 

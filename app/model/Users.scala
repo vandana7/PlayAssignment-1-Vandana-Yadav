@@ -10,4 +10,6 @@ case class Users(firstname:String,
                   mobileNo:String,
                   gender:String,
                   age:Int,
-                  hobbies:String)
+                  hobbies:String,
+                 isAdmin:Boolean,
+                 isAllowed:Boolean)

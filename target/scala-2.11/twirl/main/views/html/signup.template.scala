@@ -101,6 +101,32 @@ Seq[Any](format.raw/*1.16*/("""
         </div>
     </div>
     <div class="form-group">
+
+            <input type="hidden"  name="isAdmin"
+
+              """),_display_(/*83.16*/if(play.Play.application().configuration().getString("logintype")=="Admin" )/*83.92*/{_display_(Seq[Any](format.raw/*83.93*/("""
+
+                """),format.raw/*85.17*/("""value=true
+                 """)))}),format.raw/*86.19*/("""
+                """),format.raw/*87.17*/("""else"""),format.raw/*87.21*/("""{"""),format.raw/*87.22*/("""
+                """),format.raw/*88.17*/("""value=false
+                """),format.raw/*89.17*/("""}"""),format.raw/*89.18*/(""">
+
+    </div>
+    <div class="form-group">
+
+        <input type="hidden"  name="isAllowed"
+
+               """),_display_(/*96.17*/if(play.Play.application().configuration().getString("permission")=="allowed" )/*96.96*/{_display_(Seq[Any](format.raw/*96.97*/("""
+
+        """),format.raw/*98.9*/("""value=true
+        """)))}),format.raw/*99.10*/("""
+        """),format.raw/*100.9*/("""else"""),format.raw/*100.13*/("""{"""),format.raw/*100.14*/("""
+        """),format.raw/*101.9*/("""value=false
+        """),format.raw/*102.9*/("""}"""),format.raw/*102.10*/(""">
+
+    </div>
+    <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-default">Sign Up</button>
         </div>
@@ -128,11 +154,11 @@ Seq[Any](format.raw/*1.16*/("""
 object signup extends signup_Scope0.signup
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 06 21:37:05 IST 2017
-                  SOURCE: /home/knoldus/Play/PlayMiniProject/app/views/signup.scala.html
-                  HASH: 105fe6ae28a99bbda1686a0a6f7050a4004c2b49
-                  MATRIX: 529->1|638->15|665->16|760->85|785->90|869->148|883->154|956->206|1034->258|1048->264|1109->305|1192->362|1206->368|1266->407|1314->428|1329->434|1403->487|1487->544|1502->550|1573->600|1689->689|1704->695|1754->724
-                  LINES: 20->1|25->1|26->2|30->6|30->6|31->7|31->7|31->7|32->8|32->8|32->8|33->9|33->9|33->9|34->10|34->10|34->10|35->11|35->11|35->11|38->14|38->14|38->14
+                  DATE: Thu Mar 09 13:23:42 IST 2017
+                  SOURCE: /home/knoldus/Play/play-Assignment-1/PlayAssignment-1-Vandana-Yadav/app/views/signup.scala.html
+                  HASH: f37cf0a249dd28c1d7060bb19f79fe6542ae7085
+                  MATRIX: 529->1|638->15|665->16|760->85|785->90|869->148|883->154|956->206|1034->258|1048->264|1109->305|1192->362|1206->368|1266->407|1314->428|1329->434|1403->487|1487->544|1502->550|1573->600|1689->689|1704->695|1754->724|4774->3717|4859->3793|4898->3794|4944->3812|5004->3841|5049->3858|5081->3862|5110->3863|5155->3880|5211->3908|5240->3909|5375->4017|5463->4096|5502->4097|5539->4107|5590->4127|5627->4136|5660->4140|5690->4141|5727->4150|5775->4170|5805->4171
+                  LINES: 20->1|25->1|26->2|30->6|30->6|31->7|31->7|31->7|32->8|32->8|32->8|33->9|33->9|33->9|34->10|34->10|34->10|35->11|35->11|35->11|38->14|38->14|38->14|107->83|107->83|107->83|109->85|110->86|111->87|111->87|111->87|112->88|113->89|113->89|120->96|120->96|120->96|122->98|123->99|124->100|124->100|124->100|125->101|126->102|126->102
                   -- GENERATED --
               */
           
