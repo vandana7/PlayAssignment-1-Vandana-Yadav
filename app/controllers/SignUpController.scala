@@ -35,36 +35,30 @@ class SignUpController @Inject()(cache:CacheHandling) extends Controller {
       formWithErrors => {
         Redirect(routes.HomeController.signupPage())
       },
-        data => {
-       // val list = MockDatabase.listOfUsers
-//         if(!list.contains(data.username))
+        data =>{
+
           val dataToCheck = cache.dataToManage()
           if(!dataToCheck.contains(data.username)){
             if(data.pwd==data.repwd) {
               if(data.mobileNo.length==10) {
-//                service.addUser(data)
-                println(data)
-               val encryptedInfo = data.copy(pwd = Encryption.hash(data.pwd))
-                println(encryptedInfo)
-                cache.setValueInCache(data.username,encryptedInfo)
 
+
+               val encryptedInfo = data.copy(pwd = Encryption.hash(data.pwd))
+                cache.setValueInCache(data.username,encryptedInfo)
                 Redirect(routes.HomeController.profilePage()).withSession("User"->data.username)
               }
               else {
-
                 Redirect(routes.HomeController.signupPage()).flashing("reason" -> "invalis mobile no")
 
               }
             }
             else {
-              println("password error")
               Redirect(routes.HomeController.signupPage()).flashing("reason"->"passwords doesn't match")
             }
 
           }
            else {
-           println("user exist error")
-           Redirect(routes.HomeController.signupPage()).flashing("reason" -> "user name already exist")
+            Redirect(routes.HomeController.signupPage()).flashing("reason" -> "user name already exist")
          }
 
       }

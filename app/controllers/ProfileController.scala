@@ -14,14 +14,7 @@ class ProfileController @Inject() (cache:CacheHandling)extends Controller {
   }
 
   def manageAcounts = Action { implicit request =>
-//    request.session.get("User").map{ uname=>
-////      val datafromcache = cache.fetchedData(cache.fetchDataFromCache(uname))
-//      Ok(views.html.manageProfile(datafromcache))
-//    }.getOrElse{
-//      Unauthorized("Oops, somthing went  wrong")
-//    }
     val data = cache.dataToManage()
-    println(data)
     Ok(views.html.manageProfile(data))
   }
 

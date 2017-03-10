@@ -33,7 +33,8 @@ class CacheHandling @Inject()(cache: CacheApi) extends WorkingWithCache {
   }
 
   override def fetchDataFromCache(key: String) = {
-    cache.get(key)
+     val data = cache.get(key)
+    data
   }
 
   override def removeFromCache(key: String) = {

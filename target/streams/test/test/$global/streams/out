@@ -1,28 +1,83 @@
 [0m[[0mdebug[0m] [0mjavaOptions: List(-Djna.nosys=true)[0m
 [0m[[0mdebug[0m] [0mForking tests - parallelism = false[0m
 [0m[[0mdebug[0m] [0mCreate a single-thread test executor[0m
-[0m[[0mdebug[0m] [0mRunner for org.scalatest.tools.Framework produced 2 initial tasks for 2 tests.[0m
-[0m[[0mdebug[0m] [0m  Running TaskDef(ApplicationSpec, sbt.ForkMain$SubclassFingerscan@6cbdf54, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunner for org.scalatest.tools.Framework produced 5 initial tasks for 5 tests.[0m
+[0m[[0mdebug[0m] [0m  Running TaskDef(ApplicationSpec, sbt.ForkMain$SubclassFingerscan@6d1924f, false, [SuiteSelector])[0m
 [0m[[0minfo[0m] [0m[32mApplicationSpec:[0m[0m
 [0m[[0minfo[0m] [0m[32mRoutes[0m[0m
 [0m[[0minfo[0m] [0m[32m- should send 404 on a bad request[0m[0m
 [0m[[0minfo[0m] [0m[32mCountController[0m[0m
 [0m[[0minfo[0m] [0m[32m- should return an increasing count[0m[0m
 [0m[[0mdebug[0m] [0m    Produced 0 nested tasks and 2 events.[0m
-[0m[[0mdebug[0m] [0m  Running TaskDef(RoutesSpec, sbt.ForkMain$SubclassFingerscan@12dd1353, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0m  Running TaskDef(controllertestSuits.ProfileControllerSpec, sbt.ForkMain$SubclassFingerscan@14796867, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[32mProfileControllerSpec:[0m[0m
+[0m[[0minfo[0m] [0m[32mProfileController[0m[0m
+[0m[[0minfo[0m] [0m[31m- should manage page *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  java.lang.NullPointerException:[0m[0m
+[0m[[0minfo[0m] [0m[31m  at views.html.manageProfile_Scope0$manageProfile_Scope1$manageProfile.apply(manageProfile.template.scala:55)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllers.ProfileController$$anonfun$manageAcounts$1.apply(ProfileController.scala:18)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllers.ProfileController$$anonfun$manageAcounts$1.apply(ProfileController.scala:16)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.Action$.invokeBlock(Action.scala:498)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.Action$.invokeBlock(Action.scala:495)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.ActionBuilder$$anon$2.apply(Action.scala:458)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllertestSuits.ProfileControllerSpec$$anonfun$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(ProfileControllerSpec.scala:24)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllertestSuits.ProfileControllerSpec$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(ProfileControllerSpec.scala:21)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0mdebug[0m] [0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0mdebug[0m] [0m  Running TaskDef(ServiceSpec, sbt.ForkMain$SubclassFingerscan@63d32d1f, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[32mServiceSpec:[0m[0m
+[0m[[0minfo[0m] [0m[32mUserService[0m[0m
+[0m[[0minfo[0m] [0m[32m- should set data [0m[0m
+[0m[[0minfo[0m] [0m[32m- should remove data [0m[0m
+[0m[[0mdebug[0m] [0m    Produced 0 nested tasks and 2 events.[0m
+[0m[[0mdebug[0m] [0m  Running TaskDef(controllertestSuits.AdminPageControllerSpec, sbt.ForkMain$SubclassFingerscan@4665102e, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[32mAdminPageControllerSpec:[0m[0m
+[0m[[0minfo[0m] [0m[32mAdminPageController[0m[0m
+[0m[[0minfo[0m] [0m[31m- should suspend *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  java.lang.NullPointerException:[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllers.AdminPageController$$anonfun$suspend$1.apply(AdminPageController.scala:15)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllers.AdminPageController$$anonfun$suspend$1.apply(AdminPageController.scala:12)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:371)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.ActionBuilder$$anonfun$apply$13.apply(Action.scala:370)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.Action$.invokeBlock(Action.scala:498)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.Action$.invokeBlock(Action.scala:495)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.ActionBuilder$$anon$2.apply(Action.scala:458)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllertestSuits.AdminPageControllerSpec$$anonfun$1$$anonfun$apply$mcV$sp$1.apply$mcV$sp(AdminPageControllerSpec.scala:36)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllertestSuits.AdminPageControllerSpec$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(AdminPageControllerSpec.scala:28)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllertestSuits.AdminPageControllerSpec$$anonfun$1$$anonfun$apply$mcV$sp$1.apply(AdminPageControllerSpec.scala:28)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0mdebug[0m] [0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0mdebug[0m] [0m  Running TaskDef(RoutesSpec, sbt.ForkMain$SubclassFingerscan@222ff631, false, [SuiteSelector])[0m
 [0m[[0minfo[0m] [0m[32mRoutesSpec:[0m[0m
 [0m[[0minfo[0m] [0m[32mHomeController[0m[0m
-[0m[[0minfo[0m] [0m[32m- should render the index page[0m[0m
-[0m[[0mdebug[0m] [0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0minfo[0m] [0m[32m- should render the home page[0m[0m
+[0m[[0minfo[0m] [0m[32mHomeController[0m[0m
+[0m[[0minfo[0m] [0m[32m- should render the signup page[0m[0m
+[0m[[0minfo[0m] [0m[32mHomeController[0m[0m
+[0m[[0minfo[0m] [0m[32m- should render the login page[0m[0m
+[0m[[0minfo[0m] [0m[32mHomeController[0m[0m
+[0m[[0minfo[0m] [0m[32m- should render the Profile page[0m[0m
+[0m[[0minfo[0m] [0m[32mLoginController[0m[0m
+[0m[[0minfo[0m] [0m[32m- should render the Login page[0m[0m
+[0m[[0minfo[0m] [0m[32mProfileController[0m[0m
+[0m[[0minfo[0m] [0m[32m- should render the home page after logiut[0m[0m
+[0m[[0mdebug[0m] [0m    Produced 0 nested tasks and 6 events.[0m
 [0m[[0mdebug[0m] [0mRunner for com.novocode.junit.JUnitFramework produced 0 initial tasks for 0 tests.[0m
 [0m[[0minfo[0m] [0mScalaTest[0m
-[0m[[0minfo[0m] [0m[36mRun completed in 3 seconds, 603 milliseconds.[0m[0m
-[0m[[0minfo[0m] [0m[36mTotal number of tests run: 3[0m[0m
-[0m[[0minfo[0m] [0m[36mSuites: completed 2, aborted 0[0m[0m
-[0m[[0minfo[0m] [0m[36mTests: succeeded 3, failed 0, canceled 0, ignored 0, pending 0[0m[0m
-[0m[[0minfo[0m] [0m[32mAll tests passed.[0m[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 5 seconds, 394 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 12[0m[0m
+[0m[[0minfo[0m] [0m[36mSuites: completed 5, aborted 0[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 10, failed 2, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[31m*** 2 TESTS FAILED ***[0m[0m
 [0m[[0mdebug[0m] [0mSummary for JUnit not available.[0m
-[0m[[0minfo[0m] [0mPassed: Total 3, Failed 0, Errors 0, Passed 3[0m
+[0m[[31merror[0m] [0mFailed: Total 12, Failed 2, Errors 0, Passed 10[0m
 [0m[[0mdebug[0m] [0mPassed tests:[0m
 [0m[[0mdebug[0m] [0m	ApplicationSpec[0m
 [0m[[0mdebug[0m] [0m	RoutesSpec[0m
+[0m[[0mdebug[0m] [0m	ServiceSpec[0m
+[0m[[31merror[0m] [0mFailed tests:[0m
+[0m[[31merror[0m] [0m	controllertestSuits.AdminPageControllerSpec[0m
+[0m[[31merror[0m] [0m	controllertestSuits.ProfileControllerSpec[0m
+[0m[[31merror[0m] [0m(test:[31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

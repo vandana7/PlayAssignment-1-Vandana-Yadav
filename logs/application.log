@@ -1,14 +1,2 @@
-2017-03-09 18:26:52,740 [INFO] from application in pool-1-thread-1-ScalaTest-running-ApplicationSpec - ApplicationTimer demo: Starting application at 2017-03-09T12:56:52.720Z.
-2017-03-09 18:26:53,778 [INFO] from application in pool-1-thread-1-ScalaTest-running-ApplicationSpec - ApplicationTimer demo: Stopping application at 2017-03-09T12:56:53.778Z after 1s.
-2017-03-09 18:26:53,946 [INFO] from application in pool-1-thread-1-ScalaTest-running-ApplicationSpec - ApplicationTimer demo: Starting application at 2017-03-09T12:56:53.946Z.
-2017-03-09 18:26:54,073 [INFO] from application in pool-1-thread-1-ScalaTest-running-ApplicationSpec - ApplicationTimer demo: Stopping application at 2017-03-09T12:56:54.073Z after 1s.
-2017-03-09 18:26:54,296 [INFO] from application in pool-1-thread-1-ScalaTest-running-ApplicationSpec - ApplicationTimer demo: Starting application at 2017-03-09T12:56:54.296Z.
-2017-03-09 18:26:54,380 [INFO] from application in pool-1-thread-1-ScalaTest-running-ApplicationSpec - ApplicationTimer demo: Stopping application at 2017-03-09T12:56:54.380Z after 0s.
-2017-03-09 18:26:54,587 [INFO] from application in pool-1-thread-1-ScalaTest-running-RoutesSpec - ApplicationTimer demo: Starting application at 2017-03-09T12:56:54.587Z.
-2017-03-09 18:26:54,652 [INFO] from application in pool-1-thread-1-ScalaTest-running-RoutesSpec - ApplicationTimer demo: Stopping application at 2017-03-09T12:56:54.652Z after 0s.
-2017-03-09 18:30:05,982 [INFO] from application in pool-1-thread-1-ScalaTest-running-ApplicationSpec - ApplicationTimer demo: Starting application at 2017-03-09T13:00:05.957Z.
-2017-03-09 18:30:06,918 [INFO] from application in pool-1-thread-1-ScalaTest-running-ApplicationSpec - ApplicationTimer demo: Stopping application at 2017-03-09T13:00:06.918Z after 1s.
-2017-03-09 18:30:07,078 [INFO] from application in pool-1-thread-1-ScalaTest-running-ApplicationSpec - ApplicationTimer demo: Starting application at 2017-03-09T13:00:07.078Z.
-2017-03-09 18:30:07,143 [INFO] from application in pool-1-thread-1-ScalaTest-running-ApplicationSpec - ApplicationTimer demo: Stopping application at 2017-03-09T13:00:07.143Z after 0s.
-2017-03-09 18:30:07,284 [INFO] from application in pool-1-thread-1-ScalaTest-running-RoutesSpec - ApplicationTimer demo: Starting application at 2017-03-09T13:00:07.284Z.
-2017-03-09 18:30:07,386 [INFO] from application in pool-1-thread-1-ScalaTest-running-RoutesSpec - ApplicationTimer demo: Stopping application at 2017-03-09T13:00:07.386Z after 0s.
+2017-03-10 06:36:50,024 [INFO] from application in ForkJoinPool-1-worker-1 - ApplicationTimer demo: Starting application at 2017-03-10T01:06:50.013Z.
+2017-03-10 06:36:50,790 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)

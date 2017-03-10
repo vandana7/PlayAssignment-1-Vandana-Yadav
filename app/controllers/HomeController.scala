@@ -21,10 +21,10 @@ class HomeController @Inject()(cache:CacheHandling)extends Controller {
    * will be called when the application receives a `GET` request with
    * a path of `/`.
    */
-  def index = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-
+//  def index = Action {
+//    Ok(views.html.index("Your new application is ready."))
+//  }
+//
   def homePage = Action {
     Ok(views.html.homePage("home Page"))
 
